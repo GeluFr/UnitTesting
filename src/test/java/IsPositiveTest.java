@@ -27,5 +27,15 @@ public class IsPositiveTest {
         boolean result = numberToCheck.isPositive(numberFromValues);
         Assertions.assertTrue(result);
     } //junit.org/guide
+
+
+
+    @ParameterizedTest
+    @ValueSource(doubles = {-2.5, -9.2, -16.8, -4.3})
+    public void checkIsNegative(double numberFromValues){
+        IsPositive numberNegative = new IsPositive();
+        boolean resultNegative = numberNegative.isPositive(numberFromValues);
+        Assertions.assertFalse(resultNegative);
+    }
 }
 
